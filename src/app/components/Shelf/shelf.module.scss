@@ -1,0 +1,25 @@
+.shelf {
+  height: 100px;
+  background: #686868;
+  transform: perspective(300px) rotateX(75deg);
+  box-shadow: inset 0 40px 130px -20px #16120d;
+  transform-style: preserve-3d;
+  position: relative;
+  z-index: -1;
+  translate: 15px -45px;
+}
+
+.shelf::after {
+  content: " ";
+  height: 10px;
+  width: 96%;
+  border: none;
+  border-radius: 2px;
+  transform: perspective(6000px) rotateX(287deg);
+  position: absolute;
+  left: 2%;
+  bottom: -18px;
+  background: #606060;
+  box-shadow: inset 0 1px 1px 0 #50504f, inset 0 -2px 20px -2px #16120d,
+    0 5px 10px rgba(0, 0, 0, 0.4);
+}

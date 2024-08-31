@@ -1,6 +1,7 @@
 import React from "react";
 import bookshelfStyles from "./bookshelf.module.scss";
 import Book from "../Book/Book";
+import Shelf from "../Shelf/Shelf";
 
 const Bookshelf: React.FC = () => {
   const books = getAllHebrewCharacters();
@@ -12,6 +13,7 @@ const Bookshelf: React.FC = () => {
           <Book name={bookName} backgroundColor={getRandomColor()} key={i} />
         ))}
       </ul>
+      <Shelf />
     </div>
   );
 };
