@@ -1,0 +1,40 @@
+.book-item {
+  width: 100%;
+  padding: 0 0.5em;
+  perspective: 2000px;
+  display: block;
+
+  .book {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    transform: rotate3d(0, 1, 0, 75deg);
+
+    .cover {
+      display: block;
+      position: absolute;
+      width: 130px;
+      height: 200px;
+      transform-style: preserve-3d;
+      transform-origin: 0% 50%;
+      transition: transform 0.5s;
+      transform: translate3d(0, 0, 10px);
+      box-shadow: inset 3px 0 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .spine {
+      display: block;
+      width: 20px;
+      height: 200px;
+      margin-left: -10px;
+      transform: rotate3d(0, 1, 0, 270deg);
+    }
+
+    .name {
+      position: absolute;
+      bottom: 0.5rem;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
