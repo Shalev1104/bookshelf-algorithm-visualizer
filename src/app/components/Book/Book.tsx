@@ -1,12 +1,8 @@
 import React from "react";
 import bookStyles from "./book.module.scss";
+import { Book as BookProps } from "@/app/utils/types/bookshelf.types";
 
-interface BookProps {
-  name: string;
-  backgroundColor: string;
-}
-
-const Book: React.FC<BookProps> = ({ name, backgroundColor }) => {
+const Book: React.FC<BookProps> = ({ name, color: backgroundColor }) => {
   return (
     <li className={bookStyles["book-item"]}>
       <div className={bookStyles["book"]}>
