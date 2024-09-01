@@ -1,14 +1,17 @@
 import { makeAutoObservable } from "mobx";
 import { BooksGenerator } from "../services/books-generator";
-import { Book, BookshelfSorter } from "../utils/types/bookshelf.types";
+import { Book } from "../utils/types/bookshelf.types";
+import { BubbleSort } from "../algorithms/bubble-sort";
+import { BooksSorter } from "../services/books-sorter";
 
 class BookStore {
   books: Book[] = [];
-  sortingAlgorithm: BookshelfSorter | undefined;
+  sortingAlgorithm: BooksSorter | undefined;
 
   constructor() {
     makeAutoObservable(this);
     this.regenerateBooks();
+    this.sortingAlgorithm = new BubbleSort();
   }
 
   sortBooks() {
