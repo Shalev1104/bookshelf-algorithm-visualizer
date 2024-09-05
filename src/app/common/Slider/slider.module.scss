@@ -1,0 +1,23 @@
+.slider {
+  appearance: none;
+  height: 7px;
+  border-radius: 5px;
+  background: linear-gradient(to bottom, #287cfe, #0466ff);
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  background-color: white;
+  opacity: 75%;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.slider:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5;
+}

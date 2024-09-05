@@ -1,0 +1,24 @@
+.algorithm-selection {
+  display: flex;
+  gap: 8px;
+
+  .btn-sort {
+    background-color: hsla(0, 0, 100%, 74%);
+    background-color: #b3d3ea;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: none;
+    backdrop-filter: blur(4px);
+    background: hsl(221deg 27% 75% / 80%);
+    font-size: 12px;
+    padding: 6px 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+    &-active {
+      background: linear-gradient(to bottom, #287cfe, #0466ff);
+      border: 0;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+  }
+}

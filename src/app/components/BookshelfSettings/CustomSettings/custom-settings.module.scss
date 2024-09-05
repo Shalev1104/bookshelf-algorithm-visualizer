@@ -1,0 +1,10 @@
+.custom-settings {
+  position: relative;
+
+  .speed-text {
+    position: absolute;
+    width: max-content;
+    left: 50%;
+    translate: -50% 100%;
+  }
+}

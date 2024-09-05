@@ -1,0 +1,14 @@
+.play {
+  border: none;
+  background-color: transparent;
+  width: 12px;
+  height: 16px;
+  border-top: 8px solid transparent;
+  border-left: 12px solid #fff;
+  border-bottom: 8px solid transparent;
+  position: absolute;
+  margin-left: 2px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

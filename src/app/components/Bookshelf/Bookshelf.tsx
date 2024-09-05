@@ -1,15 +1,16 @@
 import React from "react";
-import bookshelfStyles from "./bookshelf.module.scss";
 import Shelf from "../Shelf/Shelf";
-import dynamic from "next/dynamic";
-const BookList = dynamic(() => import("../BookList/BookList"), { ssr: false });
+import BookList from "../BookList/BookList";
+import { BooksGenerator } from "@/app/services/books-generator";
 
-const Bookshelf: React.FC = () => {
+const Bookshelf: React.FC = async () => {
+  const initialBooks = new BooksGenerator().generate();
+
   return (
-    <div className={bookshelfStyles["bookshelf"]}>
-      <BookList />
+    <section>
+      <BookList initialBooks={initialBooks} />
       <Shelf />
-    </div>
+    </section>
   );
 };
 

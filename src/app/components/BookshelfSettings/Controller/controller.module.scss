@@ -1,0 +1,19 @@
+.controller {
+  display: flex;
+  gap: 8px;
+
+  .container {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to bottom, #287cfe, #0466ff);
+    border-radius: 100%;
+    position: relative;
+    cursor: pointer;
+    border: none;
+  }
+  .container:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
