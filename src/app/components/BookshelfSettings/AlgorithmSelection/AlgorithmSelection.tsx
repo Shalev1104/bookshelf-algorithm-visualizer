@@ -4,9 +4,10 @@ import { observer } from "mobx-react";
 import { BubbleSort } from "@/app/algorithms/bubble-sort";
 import { BooksSorter } from "@/app/services/books-sorter";
 import classnames from "classnames";
+import { InsertionSort } from "@/app/algorithms/insertion-sort";
 
 const AlgorithmSelection: React.FC = () => {
-  const algorithms = [BubbleSort];
+  const algorithms = [BubbleSort, InsertionSort];
 
   return (
     <div className={algorithmSelectionStyles["algorithm-selection"]}>
