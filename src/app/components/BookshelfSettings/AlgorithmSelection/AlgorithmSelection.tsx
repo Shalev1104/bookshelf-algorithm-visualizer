@@ -5,9 +5,10 @@ import { BubbleSort } from "@/app/algorithms/bubble-sort";
 import { BooksSorter } from "@/app/services/books-sorter";
 import classnames from "classnames";
 import { InsertionSort } from "@/app/algorithms/insertion-sort";
+import { SelectionSort } from "@/app/algorithms/selection-sort";
 
 const AlgorithmSelection: React.FC = () => {
-  const algorithms = [BubbleSort, InsertionSort];
+  const algorithms = [BubbleSort, InsertionSort, SelectionSort];
 
   return (
     <div className={algorithmSelectionStyles["algorithm-selection"]}>
