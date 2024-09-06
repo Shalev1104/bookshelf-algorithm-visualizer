@@ -8,7 +8,7 @@ export class BubbleSort extends BooksSorter {
         const first = books[j].name;
         const second = books[j + 1].name;
 
-        if (this.isLeftGreaterThanRight(second, first)) {
+        if (this.isLeftGreaterThanRight(first, second)) {
           [books[j], books[j + 1]] = [books[j + 1], books[j]];
           yield [...books];
         }
