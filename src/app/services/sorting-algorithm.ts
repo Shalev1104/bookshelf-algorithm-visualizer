@@ -1,5 +1,5 @@
 import { Book } from "../utils/types/bookshelf.types";
-import animationStore from "./animation-store";
+import animationStore from "../stores/animation-store";
 
 export abstract class SortingAlgorithm {
   abstract sort(books: Book[]): AsyncGenerator<Book[]>;

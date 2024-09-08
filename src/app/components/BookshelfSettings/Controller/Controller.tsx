@@ -4,7 +4,7 @@ import { observer } from "mobx-react";
 import Dice from "@/app/common/Dice/Dice";
 import Pause from "@/app/common/Pause/Pause";
 import Play from "@/app/common/Play/Play";
-import animationStore from "@/app/services/animation-store";
+import animationStore from "@/app/stores/animation-store";
 
 const Controller: React.FC = () => {
   const makeTask = () => {

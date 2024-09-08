@@ -2,7 +2,7 @@ import { observer } from "mobx-react";
 import customSettingsStyles from "./custom-settings.module.scss";
 import bookshelfStore from "@/app/stores/bookshelf-store";
 import Slider from "@/app/common/Slider/Slider";
-import animationStore from "@/app/services/animation-store";
+import animationStore from "@/app/stores/animation-store";
 
 function CustomSettings() {
   return (
