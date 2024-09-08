@@ -15,7 +15,7 @@ const BookList: React.FC<Props> = ({ initialBooks }) => {
   return (
     <ul className={bookListStyles["books"]}>
       {getBooks(bookshelfStore.books, initialBooks).map((book, i, array) => (
-        <Book {...book} key={i} order={array.length - i} />
+        <Book {...book} key={i} order={array.length - i} index={i} />
       ))}
     </ul>
   );

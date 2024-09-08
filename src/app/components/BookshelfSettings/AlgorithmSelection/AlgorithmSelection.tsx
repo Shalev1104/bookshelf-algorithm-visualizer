@@ -2,10 +2,10 @@ import bookshelfStore from "@/app/stores/bookshelf-store";
 import algorithmSelectionStyles from "./algorithm-selection.module.scss";
 import { observer } from "mobx-react";
 import { BubbleSort } from "@/app/algorithms/bubble-sort";
-import { BooksSorter } from "@/app/services/books-sorter";
 import classnames from "classnames";
 import { InsertionSort } from "@/app/algorithms/insertion-sort";
 import { SelectionSort } from "@/app/algorithms/selection-sort";
+import { SortingAlgorithm } from "@/app/services/sorting-algorithm";
 
 const AlgorithmSelection: React.FC = () => {
   const algorithms = [BubbleSort, InsertionSort, SelectionSort];
@@ -20,14 +20,12 @@ const AlgorithmSelection: React.FC = () => {
 };
 
 type Props = {
-  algorithm: new () => BooksSorter;
+  algorithm: new () => SortingAlgorithm;
 };
 const Algorithm: React.FC<Props> = observer(({ algorithm }) => {
-  const isActive = () =>
-    bookshelfStore.settings.sortingAlgorithm instanceof algorithm;
+  const isActive = () => bookshelfStore.sortingAlgorithm instanceof algorithm;
 
-  const onSelect = () =>
-    bookshelfStore.settings.setSortingAlgorithm(new algorithm());
+  const onSelect = () => bookshelfStore.setSortingAlgorithm(new algorithm());
 
   return (
     <button

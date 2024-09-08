@@ -4,11 +4,12 @@ import { observer } from "mobx-react";
 import Dice from "@/app/common/Dice/Dice";
 import Pause from "@/app/common/Pause/Pause";
 import Play from "@/app/common/Play/Play";
+import animationStore from "@/app/services/animation-store";
 
 const Controller: React.FC = () => {
   const makeTask = () => {
     if (!bookshelfStore.isSorting) return bookshelfStore.sortBooks();
-    return bookshelfStore.togglePause();
+    return animationStore.togglePause();
   };
 
   return (
@@ -29,7 +30,9 @@ const Controller: React.FC = () => {
 };
 
 const TaskIcon = observer(() => {
-  const { isSorting, isPaused } = bookshelfStore;
+  const { isSorting } = bookshelfStore;
+  const { isPaused } = animationStore;
+
   if (!isSorting) return <Play />;
   return isPaused ? <Play /> : <Pause />;
 });
