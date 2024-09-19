@@ -7,7 +7,9 @@ const Bookshelf: React.FC = () => {
   const initialBooks = new BooksGenerator().generate();
 
   return (
-    <section>
+    <section
+      style={{ display: "flex", flexDirection: "column", margin: "0 auto" }}
+    >
       <BookList initialBooks={initialBooks} />
       <Shelf />
     </section>

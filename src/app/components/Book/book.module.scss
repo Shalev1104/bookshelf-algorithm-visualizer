@@ -1,5 +1,4 @@
 .book-item {
-  width: 100%;
   padding: 0 0.5em;
   perspective: 2000px;
   display: block;
@@ -14,7 +13,7 @@
       display: block;
       position: absolute;
       width: 130px;
-      height: 200px;
+      height: 100%;
       transform-style: preserve-3d;
       transform-origin: 0% 50%;
       transition: transform 0.5s;
@@ -35,6 +34,29 @@
       bottom: 0.5rem;
       text-align: center;
       width: 100%;
+      font-size: 0.8em;
+      font-weight: bold;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .book-item {
+    padding: 0 0.4em;
+
+    .book {
+      .cover {
+        width: 60px;
+        transform: translate3d(0, 0, 3.7px);
+      }
+      .spine {
+        width: 10px;
+        height: 100px;
+      }
+
+      .name {
+        font-size: 0.5em;
+      }
     }
   }
 }

@@ -4,3 +4,9 @@
   position: relative;
   margin: 0 5em;
 }
+
+@media screen and (max-width: 600px) {
+  .books {
+    margin: 0 2em;
+  }
+}
