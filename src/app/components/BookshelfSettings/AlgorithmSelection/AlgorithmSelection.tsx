@@ -12,8 +12,8 @@ const AlgorithmSelection: React.FC = () => {
 
   return (
     <div className={algorithmSelectionStyles["algorithm-selection"]}>
-      {algorithms.map((algorithm, index) => (
-        <Algorithm algorithm={algorithm} key={index} />
+      {algorithms.map((algorithmClass, index) => (
+        <Algorithm algorithm={algorithmClass} key={index} />
       ))}
     </div>
   );
@@ -23,9 +23,11 @@ type Props = {
   algorithm: new () => SortingAlgorithm;
 };
 const Algorithm: React.FC<Props> = observer(({ algorithm }) => {
+  const instance = new algorithm();
+
   const isActive = () => bookshelfStore.sortingAlgorithm instanceof algorithm;
 
-  const onSelect = () => bookshelfStore.setSortingAlgorithm(new algorithm());
+  const onSelect = () => bookshelfStore.setSortingAlgorithm(instance);
 
   return (
     <button
@@ -36,7 +38,7 @@ const Algorithm: React.FC<Props> = observer(({ algorithm }) => {
       onClick={() => onSelect()}
       disabled={bookshelfStore.isSorting}
     >
-      {algorithm.name}
+      {instance.getName()}
     </button>
   );
 });

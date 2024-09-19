@@ -15,4 +15,8 @@ export class BubbleSort extends SortingAlgorithm {
       }
     }
   }
+
+  getName(): string {
+    return "bubble sort";
+  }
 }

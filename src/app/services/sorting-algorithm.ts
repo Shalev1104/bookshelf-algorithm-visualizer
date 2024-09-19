@@ -3,6 +3,7 @@ import animationStore from "../stores/animation-store";
 
 export abstract class SortingAlgorithm {
   abstract sort(books: Book[]): AsyncGenerator<Book[]>;
+  abstract getName(): string;
 
   isLeftGreaterThanRight(leftBook: string, rightBook: string) {
     return leftBook.localeCompare(rightBook, "he") > 0;

@@ -15,4 +15,8 @@ export class InsertionSort extends SortingAlgorithm {
       }
     }
   }
+
+  getName(): string {
+    return "insertion sort";
+  }
 }

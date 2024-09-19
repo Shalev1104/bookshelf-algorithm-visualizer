@@ -15,4 +15,8 @@ export class SelectionSort extends SortingAlgorithm {
       }
     }
   }
+
+  getName(): string {
+    return "selection sort";
+  }
 }
