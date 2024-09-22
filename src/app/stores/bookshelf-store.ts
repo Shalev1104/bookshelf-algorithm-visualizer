@@ -13,12 +13,16 @@ class BookshelfStore {
     makeAutoObservable(this);
   }
 
+  abort() {
+    this.setIsSorting(false);
+  }
+
   async sortBooks() {
     this.setIsSorting(true);
     const generator = this.sortingAlgorithm.sort([...this.books]);
 
     let nextResult;
-    while (!(nextResult = await generator.next()).done) {
+    while (this.isSorting && !(nextResult = await generator.next()).done) {
       this.setBooks(nextResult.value);
     }
     this.setIsSorting(false);
